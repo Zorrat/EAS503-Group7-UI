@@ -46,13 +46,12 @@ if st.sidebar.button('Predict'):
     gbr_prediction = round( float(prediction['prediction_gbr']) * 1000000 ,2)
 
     # Display Input values from user_input dictionary as a table
-
     st.table(user_input)
 
 
-    st.success(f"Random Forest Regressor Prediction: {rfr_prediction} Million Units Sold")
-    st.success(f"AdaBoost Regressor Prediction: {abr_prediction} Million Units Sold")
-    st.success(f"Gradient Boosting Regressor Prediction: {gbr_prediction} Million Units Sold")
+    st.success(f"Random Forest Regressor Prediction: {rfr_prediction} Units Sold")
+    st.success(f"AdaBoost Regressor Prediction: {abr_prediction} Units Sold")
+    st.success(f"Gradient Boosting Regressor Prediction: {gbr_prediction} Units Sold")
 
 
     
