@@ -41,7 +41,18 @@ if st.sidebar.button('Predict'):
     
     # Neatly display the prediction and model name to the user from keys model_name and prediction in bold
 
-    st.write(f"Model Name: **{prediction['model_name']}**")
-    global_sales = round(float(prediction['prediction']) * 1000000 ,2)
-    st.write(f"The predicted Global sales should be: **{global_sales}** million units")
+    rfr_prediction = round( float(prediction['prediction_rfr']) * 1000000 ,2)
+    abr_prediction = round( float(prediction['prediction_abr']) * 1000000 ,2)
+    gbr_prediction = round( float(prediction['prediction_gbr']) * 1000000 ,2)
+
+    # Display Input values from user_input dictionary as a table
+
+    st.table(user_input)
+
+
+    st.success(f"Random Forest Regressor Prediction: {rfr_prediction} Million Units Sold")
+    st.success(f"AdaBoost Regressor Prediction: {abr_prediction} Million Units Sold")
+    st.success(f"Gradient Boosting Regressor Prediction: {gbr_prediction} Million Units Sold")
+
+
     
